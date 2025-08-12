@@ -68,7 +68,15 @@ The project runs **locally** on your computer and cannot be hosted online becaus
 ## 📂 Project Structure
 
 FacialRecognitionAttendanceSystem/
-│
+|
+├── static/
+
+│ └── style.css # Basic styling
+
+├── templates/
+
+│ └── index.html # Minimal UI (Start Recognition + Attendance Table)
+
 ├── AttendanceProject.py # Main facial recognition logic
 
 ├── app.py # Flask backend to provide simple UI
@@ -77,17 +85,9 @@ FacialRecognitionAttendanceSystem/
 
 ├── ImagesAttendance/ # Your folder with known faces
 
-├── templates/
-
-│ └── index.html # Minimal UI (Start Recognition + Attendance Table)
-
-├── static/
-
-│ └── style.css # Basic styling
+└── README.md # This file
 
 ├── requirements.txt # Python dependencies
-
-└── README.md # This file
 
 
 ---
