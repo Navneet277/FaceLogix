@@ -1,7 +1,7 @@
-# Facial Recognition Attendance System
+# FaceLogix - A Facial Recognition Attendance System
 
 
-A **Python + Flask** based application that uses your **webcam** to recognize known faces and automatically mark attendance in a CSV file.  
+**FaceLogix** is a **Python + Flask** based application that uses your **webcam** to recognize known faces and automatically mark attendance in a CSV file.  
 The project runs **locally** on your computer and cannot be hosted online because webcam access is required.
 
 ---
