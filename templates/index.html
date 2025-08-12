@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Recognition Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Face Recognition Attendance System</h1>
+        <p>Click below to start marking attendance via webcam.</p>
+        <button id="start-btn">🎥 Start Recognition</button>
+        <div id="status"></div>
+
+        <!-- Live attendance table -->
+        <h2>📋 Live Attendance</h2>
+        <table id="attendance-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date & Time</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        // Start recognition button
+        document.getElementById("start-btn").addEventListener("click", function() {
+            document.getElementById("status").innerHTML = "🚀 Starting facial recognition...";
+            fetch("/run", { method: "POST" })
+                .then(res => res.json())
+                .then(data => { document.getElementById("status").innerHTML = data.message; })
+                .catch(err => { document.getElementById("status").innerHTML = "❌ Error: " + err; });
+        });
+
+        // Function to fetch and display attendance
+        function loadAttendance() {
+            fetch("/attendance")
+                .then(res => res.json())
+                .then(data => {
+                    const tbody = document.querySelector("#attendance-table tbody");
+                    tbody.innerHTML = ""; // Clear old data
+                    data.forEach(row => {
+                        const tr = document.createElement("tr");
+                        tr.innerHTML = `<td>${row.name}</td><td>${row.datetime}</td>`;
+                        tbody.appendChild(tr);
+                    });
+                });
+        }
+
+        // Load table every 5 seconds
+        setInterval(loadAttendance, 5000);
+        loadAttendance(); // Load immediately on page load
+    </script>
+</body>
+</html>
