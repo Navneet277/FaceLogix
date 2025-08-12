@@ -81,16 +81,13 @@ FacialRecognitionAttendanceSystem/
 
 ├── AttendanceProject.py # Main facial recognition logic
 
-├── app.py # Flask backend to provide simple UI
-
-
-
-├── ImagesAttendance/ # Your folder with known faces
-
 └── README.md # This file
+
+├── app.py # Flask backend to provide simple UI
 
 ├── requirements.txt # Python dependencies
 
+├── ImagesAttendance/ # Your folder with known faces   ( Create on your own)
 
 ---
 
