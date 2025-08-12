@@ -77,11 +77,13 @@ FacialRecognitionAttendanceSystem/
 
 │ └── index.html # Minimal UI (Start Recognition + Attendance Table)
 
+├── Attendance.csv # Stores attendance logs
+
 ├── AttendanceProject.py # Main facial recognition logic
 
 ├── app.py # Flask backend to provide simple UI
 
-├── Attendance.csv # Stores attendance logs
+
 
 ├── ImagesAttendance/ # Your folder with known faces
 
