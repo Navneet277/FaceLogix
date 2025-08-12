@@ -92,8 +92,6 @@ FacialRecognitionAttendanceSystem/
 ---
 
 
----
-
 ## ⚙️ Installation & Running the Project Locally
 
 1. **Clone the Repository**
